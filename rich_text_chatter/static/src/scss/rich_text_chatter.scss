@@ -1,0 +1,78 @@
+.rich-text-chatter-container {
+    /* Dar espacio al textarea rico para que el texto no se vea "pegado" a los bordes */
+    .o-mail-Composer-input.odoo-editor-editable,
+    .odoo-editor-editable {
+        padding: 12px 14px !important;
+        padding-right: 50px !important;
+        border-radius: 8px;
+        min-height: 40px;
+        background-color: white;
+
+        /* Placeholder styling */
+        &.o-is-empty:before {
+            content: attr(placeholder);
+            color: #adb5bd;
+            position: absolute;
+            pointer-events: none;
+        }
+    }
+
+    .oe-toolbar, .o_we_toolbar {
+        margin-right: 8px;
+        margin-top: 2px;
+        z-index: 10 !important;
+        box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        border-radius: 4px;
+    }
+}
+
+/* Permitir que las imágenes dentro de los mensajes tengan cursor de puntero para indicar el full preview */
+.o-mail-Message-body img, 
+.o-mail-Message-richBody img {
+    cursor: pointer;
+    transition: opacity 0.2s ease-in-out;
+    &:hover {
+        opacity: 0.9;
+    }
+}
+
+/* Fix para mensajes "comprimidos" en el Chatter publicado */
+.o-mail-Message-core,
+.o-mail-Message-content, 
+.o-mail-Message-bubble,
+.o-mail-Message-body {
+    /* Forzar que el contenedor principal ocupe todo el ancho */
+    flex-grow: 1 !important;
+    width: 100% !important;
+    max-width: 100% !important;
+}
+
+.o-mail-Message-content {
+    /* Forzar al chatter a mostrar todo el bloque sin importar cuan largo es (cancela el 'read more') */
+    max-height: none !important;
+}
+
+.o-mail-Message-readMore {
+    /* Esconder cualquier boton residual de 'Read More' inyectado por Odoo si existiera */
+    display: none !important;
+}
+
+.o-mail-Message-body {
+    /* Asegurar que el div envolvente 'w-100' inyectado en JS funcione */
+    & > .w-100 {
+        width: 100% !important;
+        display: block !important;
+    }
+
+    /* Asegurar que las tablas de Odoo ocupen el ancho total si el editor así lo configuró */
+    table {
+        width: 100%;
+        margin-bottom: 1rem;
+    }
+
+    /* Asegurar que los bloques de alerta (lightbulbs, etc) no se compriman */
+    .alert {
+        width: 100%;
+        display: block;
+    }
+}
