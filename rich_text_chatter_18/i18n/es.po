@@ -1,0 +1,65 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* rich_text_chatter
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 18.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-04-07 19:20+0000\n"
+"PO-Revision-Date: 2026-04-07 19:20+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: es\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+msgid "Both"
+msgstr "Ambos"
+
+msgid "Canned Response"
+msgstr "Respuesta Predefinida"
+
+msgid "Excel Document"
+msgstr "Documento de Excel"
+
+msgid "Log Note"
+msgstr "Nota Interna"
+
+msgid "Quote & Reply"
+msgstr "Citar y Responder"
+
+msgid "Search canned responses..."
+msgstr "Buscar respuestas predefinidas..."
+
+msgid "Search..."
+msgstr "Buscar..."
+
+msgid "Send Message"
+msgstr "Enviar Mensaje"
+
+msgid "Someone"
+msgstr "Alguien"
+
+msgid "wrote:"
+msgstr "escribió:"
+
+msgid "Loading preview / assets..."
+msgstr "Cargando vista previa / recursos..."
+
+msgid "Required library not loaded. Refresh the page to load assets."
+msgstr "Librería requerida no cargada. Recargue la página para cargar los recursos."
+
+msgid "Failed to load document preview."
+msgstr "Fallo al cargar la vista previa del documento."
+
+msgid "Substitution"
+msgstr "Sustitución"
+
+msgid "Usage"
+msgstr "Uso"
+
+msgid "Word Document"
+msgstr "Documento de Word"
