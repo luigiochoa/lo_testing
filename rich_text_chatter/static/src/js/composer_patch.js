@@ -82,14 +82,13 @@ messageActionsRegistry.add("quote-reply", {
             
             let cleanBody = message.body || "";
 
-            // We use a div to bypass Read More, but we add a nice background and border to mimic a native quote
-            // Setting contenteditable="false" makes the whole block behave like a single attachment, allowing 1-click deletion via Backspace
+            // We use a blockquote, but to allow users to delete it easily, we add a zero-width space before it
+            // and we also trigger the "Send message" button so the composer tab focuses correctly.
             const quoteHtml = `
-                <div class="rich_text_quote" contenteditable="false" style="border-left: 4px solid #00A09D; background-color: rgba(0, 160, 157, 0.05); padding: 12px 15px; margin: 10px 0; border-radius: 0 8px 8px 0; color: #495057;">
-                    <div class="text-truncate" style="font-size: 0.9em; margin-bottom: 8px; color: #00A09D; font-weight: 600;">
-                        <i class="fa fa-reply me-1"></i> ${authorName} ${_t("wrote:")}
-                    </div>
-                    <div style="opacity: 0.9;">${cleanBody}</div>
+                &#8203;
+                <div style="border-left: 3px solid #00A09D; padding-left: 10px; margin-left: 0px; color: #555;">
+                    <i><strong>${authorName}</strong> ${_t("wrote:")}</i><br/>
+                    ${cleanBody}
                 </div>
                 <p><br></p>
             `;
