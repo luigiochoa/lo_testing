@@ -12,9 +12,9 @@ class MailCannedResponse(models.Model):
     )
 
     usage_type = fields.Selection([
-        ('all', 'Both'),
-        ('message', 'Send Message'),
-        ('note', 'Log Note'),
+        ('all', 'Everywhere'),
+        ('message', 'Send Message & Discuss'),
+        ('note', 'Log Note Only'),
     ], string="Usage", default='all', required=True)
 
     def _to_store(self, store, /, *, fields=None):
