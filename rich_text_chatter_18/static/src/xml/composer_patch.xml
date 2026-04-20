@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates xml:space="preserve">
+    <t t-inherit="mail.Composer" t-inherit-mode="extension" owl="1">
+        <xpath expr="//div[contains(@class, 'position-relative') and contains(@class, 'flex-grow-1')]" position="replace">
+            <div class="position-relative flex-grow-1 rich-text-chatter-container" t-on-keydown="onWysiwygKeydown">
+                <t t-if="!env.inChatWindow">
+                    <!-- Wysiwyg used for standard chatter log notes and emails (replaces the textarea) -->
+                    <Wysiwyg
+                        t-if="state.active"
+                        config="getWysiwygConfig()"
+                        onLoad="(editor) => this.onWysiwygLoad(editor)"
+                        onBlur="() => this.onWysiwygBlur()"
+                        contentClass="'o-mail-Composer-input o-mail-Composer-bg shadow-none text-body ' + (isMobileOS ? 'o-mobile ' : '')"
+                    />
+                    <!-- Maintain references so standard composer code doesn't crash -->
+                    <textarea t-ref="textarea" style="display: none;" class="o-mail-Composer-fake text-body" t-model="props.composer.text" disabled="1"/>
+                    <textarea t-ref="fakeTextarea" style="display: none;" class="o-mail-Composer-fake" t-model="props.composer.text" disabled="1"/>
+                </t>
+                <t t-else="">
+                    <!-- Chat window / discuss fallback (keep original textarea) -->
+                    <t t-set="inputClasses" t-value="'o-mail-Composer-inputStyle form-control border-0 rounded-3'"/>
+                    <textarea class="o-mail-Composer-input o-mail-Composer-bg shadow-none overflow-auto text-body"
+                        t-att-class="{ 'o-mobile': isMobileOS }"
+                        t-attf-class="{{ inputClasses }}"
+                        t-ref="textarea"
+                        t-on-keydown="onKeydown"
+                        t-on-focusin="onFocusin"
+                        t-on-focusout="onFocusout"
+                        t-on-click="(ev) => markEventHandled(ev, 'composer.onClickTextarea')"
+                        t-on-paste="onPaste"
+                        t-model="props.composer.text"
+                        t-att-placeholder="placeholder"
+                        t-att-readOnly="!state.active"
+                    />
+                    <textarea class="o-mail-Composer-fake position-absolute overflow-hidden"
+                        t-att-class="{ 'o-mobile': isMobileOS }"
+                        t-attf-class="{{ inputClasses }}"
+                        t-model="props.composer.text"
+                        t-ref="fakeTextarea"
+                        disabled="1"
+                    />
+                </t>
+            </div>
+        </xpath>
+    </t>
+
+    <t t-inherit="mail.Thread" t-inherit-mode="extension" owl="1">
+        <xpath expr="//div[hasclass('o-mail-Thread')]/t[@name='content']" position="before">
+            <div t-if="props.thread.pinnedMessages.length > 0" class="o-mail-Thread-pinned-container mb-3 border-bottom pb-2">
+                <div class="px-3 py-2 text-muted smaller fw-bold d-flex align-items-center bg-light">
+                    <i class="fa fa-thumb-tack me-2 text-primary"/> PINNED MESSAGES
+                </div>
+                <!-- We use a wrapper to match the core layout but with different styles -->
+                <div class="o-mail-Thread-pinned-list d-flex flex-column gap-2 p-2">
+                    <t t-foreach="props.thread.pinnedMessages" t-as="msg" t-key="'pinned_' + msg.id">
+                        <div class="o-mail-Thread-pinned-item">
+                            <Message
+                                asCard="true"
+                                className="getMessageClassName(msg) + ' o-mail-Message-pinned rounded-3'"
+                                message="msg"
+                                thread="props.thread"
+                                hasActions="false"
+                                squashed="false"
+                            />
+                            <button class="o-mail-Thread-pinned-jump"
+                                    t-on-click.stop="() => env.messageHighlight?.highlightMessage(msg, props.thread)"
+                                    title="Go to message">
+                                <i class="fa fa-arrow-right"/>
+                            </button>
+                        </div>
+                    </t>
+                </div>
+            </div>
+        </xpath>
+    </t>
+
+    <t t-inherit="mail.Message" t-inherit-mode="extension" owl="1">
+        <xpath expr="//div[hasclass('o-mail-Message-header')]" position="inside">
+            <i t-if="props.message.pinned_at" class="fa fa-thumb-tack ms-1 text-primary animate-pin" title="Pinned Message" style="font-size: 0.8em;"/>
+        </xpath>
+        <xpath expr="//AttachmentList" position="replace">
+            <AttachmentList
+                t-if="visibleAttachments and visibleAttachments.length > 0"
+                attachments="visibleAttachments"
+                unlinkAttachment.bind="onClickAttachmentUnlink"
+                imagesHeight="visibleAttachments.length === 1 ? 300 : 75"
+                messageSearch="props.messageSearch"/>
+        </xpath>
+    </t>
+
+    <t t-inherit="web.FileViewer" t-inherit-mode="extension" owl="1">
+        <xpath expr="//div[contains(@class, 'o-FileViewer-main')]" position="inside">
+            <div t-if="state.file.isDocx or state.file.isXlsx" 
+                 class="o-FileViewer-view w-75 h-100 border-0 bg-white docx-xlsx-viewer overflow-auto p-4" 
+                 t-att-class="{ 'w-100': ui.isSmall }" 
+                 t-ref="customViewerContainer">
+                <t t-if="state.isLoadingCustomView">
+                    <div class="d-flex w-100 h-100 align-items-center justify-content-center">
+                        <i class="fa fa-3x fa-circle-o-notch fa-spin text-muted" role="img"/>
+                    </div>
+                </t>
+            </div>
+        </xpath>
+        <xpath expr="//div[hasclass('o-FileViewer-header')]/div[1]" position="inside">
+            <i t-if="state.file.isDocx" class="fa fa-file-word-o" role="img" title="Word Document"/>
+            <i t-if="state.file.isXlsx" class="fa fa-file-excel-o" role="img" title="Excel Document"/>
+        </xpath>
+    </t>
+</templates>

@@ -1,0 +1,156 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* rich_text_chatter_18
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 18.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-04-16 15:00+0000\n"
+"PO-Revision-Date: 2026-04-16 15:00+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: rich_text_chatter_18
+#: model:ir.model.fields.selection,name:rich_text_chatter_18.selection__mail_canned_response__usage_type__all
+msgid "Both"
+msgstr ""
+
+#. module: rich_text_chatter_18
+#: model:ir.model,name:rich_text_chatter_18.model_mail_canned_response
+msgid "Canned Response"
+msgstr ""
+
+#. module: rich_text_chatter_18
+#: model:ir.model.fields,help:rich_text_chatter_18.field_mail_canned_response__substitution
+msgid ""
+"Content that will automatically replace the shortcut of your choosing. This "
+"content can still be adapted before sending your message."
+msgstr ""
+
+#. module: rich_text_chatter_18
+#. odoo-javascript
+#: code:addons/rich_text_chatter_18/static/src/xml/composer_patch.xml:0
+msgid "Excel Document"
+msgstr ""
+
+#. module: rich_text_chatter_18
+#. odoo-javascript
+#: code:addons/rich_text_chatter_18/static/src/js/composer_patch.js:0
+msgid "Failed to load document preview."
+msgstr ""
+
+#. module: rich_text_chatter_18
+#. odoo-javascript
+#: code:addons/rich_text_chatter_18/static/src/js/composer_patch.js:0
+msgid "File"
+msgstr ""
+
+#. module: rich_text_chatter_18
+#. odoo-javascript
+#: code:addons/rich_text_chatter_18/static/src/xml/composer_patch.xml:0
+msgid "Go to message"
+msgstr ""
+
+#. module: rich_text_chatter_18
+#. odoo-javascript
+#: code:addons/rich_text_chatter_18/static/src/js/composer_patch.js:0
+msgid "Image"
+msgstr ""
+
+#. module: rich_text_chatter_18
+#. odoo-javascript
+#: code:addons/rich_text_chatter_18/static/src/js/composer_patch.js:0
+msgid "Loading preview / assets..."
+msgstr ""
+
+#. module: rich_text_chatter_18
+#. odoo-javascript
+#: model:ir.model.fields.selection,name:rich_text_chatter_18.selection__mail_canned_response__usage_type__note
+msgid "Log Note"
+msgstr ""
+
+#. module: rich_text_chatter_18
+#. odoo-javascript
+#: code:addons/rich_text_chatter_18/static/src/xml/composer_patch.xml:0
+msgid "PINNED MESSAGES"
+msgstr ""
+
+#. module: rich_text_chatter_18
+#. odoo-javascript
+#: code:addons/rich_text_chatter_18/static/src/js/composer_patch.js:0
+msgid "Pin to Top"
+msgstr ""
+
+#. module: rich_text_chatter_18
+#. odoo-javascript
+#: code:addons/rich_text_chatter_18/static/src/xml/composer_patch.xml:0
+msgid "Pinned Message"
+msgstr ""
+
+#. module: rich_text_chatter_18
+#. odoo-javascript
+#: code:addons/rich_text_chatter_18/static/src/js/composer_patch.js:0
+msgid "Quote & Reply"
+msgstr ""
+
+#. module: rich_text_chatter_18
+#. odoo-javascript
+#: code:addons/rich_text_chatter_18/static/src/js/canned_response_list.js:0
+msgid "Search canned responses..."
+msgstr ""
+
+#. module: rich_text_chatter_18
+#. odoo-javascript
+#: code:addons/rich_text_chatter_18/static/src/xml/canned_response_list.xml:0
+msgid "Search..."
+msgstr ""
+
+#. module: rich_text_chatter_18
+#: model:ir.model.fields.selection,name:rich_text_chatter_18.selection__mail_canned_response__usage_type__message
+msgid "Send Message"
+msgstr ""
+
+#. module: rich_text_chatter_18
+#. odoo-javascript
+#: code:addons/rich_text_chatter_18/static/src/js/composer_patch.js:0
+msgid "Someone"
+msgstr ""
+
+#. module: rich_text_chatter_18
+#: model:ir.model.fields,field_description:rich_text_chatter_18.field_mail_canned_response__substitution
+msgid "Substitution"
+msgstr ""
+
+#. module: rich_text_chatter_18
+#. odoo-javascript
+#: code:addons/rich_text_chatter_18/static/src/js/composer_patch.js:0
+msgid "Unpin Message"
+msgstr ""
+
+#. module: rich_text_chatter_18
+#: model:ir.model.fields,field_description:rich_text_chatter_18.field_mail_canned_response__usage_type
+msgid "Usage"
+msgstr ""
+
+#. module: rich_text_chatter_18
+#. odoo-javascript
+#: code:addons/rich_text_chatter_18/static/src/xml/composer_patch.xml:0
+msgid "Word Document"
+msgstr ""
+
+#. module: rich_text_chatter_18
+#. odoo-javascript
+#: code:addons/rich_text_chatter_18/static/src/js/composer_patch.js:0
+msgid "wrote:"
+msgstr ""
+
+#. module: rich_text_chatter_18
+#. odoo-javascript
+#: code:addons/rich_text_chatter_18/static/src/js/composer_patch.js:0
+msgid "Required library not loaded. Refresh the page to load assets."
+msgstr ""
