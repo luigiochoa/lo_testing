@@ -1,0 +1,244 @@
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap');
+    .et-desc * {
+        font-family: 'Plus Jakarta Sans', -apple-system, sans-serif !important;
+    }
+    /* Tabs CSS */
+    .et-tab-input { display: none; }
+    .et-tab-label { padding: 12px 24px; border: 1px solid #eee; border-radius: 12px; cursor: pointer; font-weight: 700; color: #555; background: #fff; transition: all 0.2s; white-space: nowrap; }
+    .et-tab-label:hover { border-color: #28a745; color: #111; }
+    .et-tab-content { display: none; animation: etFadeIn 0.4s ease-out forwards; width: 100%; }
+    #et-tab1:checked ~ .et-tab-nav [for="et-tab1"],
+    #et-tab2:checked ~ .et-tab-nav [for="et-tab2"],
+    #et-tab3:checked ~ .et-tab-nav [for="et-tab3"],
+    #et-tab4:checked ~ .et-tab-nav [for="et-tab4"],
+    #et-tab5:checked ~ .et-tab-nav [for="et-tab5"],
+    #et-tab6:checked ~ .et-tab-nav [for="et-tab6"] {
+        background: #111; color: #fff; border-color: #111;
+    }
+    #et-tab1:checked ~ .et-content-wrapper #et-content1,
+    #et-tab2:checked ~ .et-content-wrapper #et-content2,
+    #et-tab3:checked ~ .et-content-wrapper #et-content3,
+    #et-tab4:checked ~ .et-content-wrapper #et-content4,
+    #et-tab5:checked ~ .et-content-wrapper #et-content5,
+    #et-tab6:checked ~ .et-content-wrapper #et-content6 {
+        display: block;
+    }
+    @keyframes etFadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+</style>
+
+<section class="oe_container et-desc" style="color: #1a1a1a; background-color: #fafafa; padding: 0; margin: 0; overflow-x: hidden;">
+    
+    <!-- HERO SECTION -->
+    <div style="background: linear-gradient(180deg, rgba(40,167,69,0.04) 0%, rgba(250,250,250,1) 100%); padding: 80px 20px 40px 20px; text-align: center;">
+        <div style="max-width: 900px; margin: 0 auto;">
+            <!-- LOGO: Recuerda guardar tu logo horizontal como 'description_logo.png' -->
+            <img src="description_logo.png" style="max-width: 250px; margin-bottom: 30px; display: inline-block;" alt="eightools logo">
+            
+            <h1 style="font-weight: 800; font-size: 3.5rem; color: #111; margin-bottom: 20px; letter-spacing: -1px;">
+                Rich Text Chatter <span style="color: #28a745;">Tool</span>
+            </h1>
+            <p style="font-size: 1.25rem; color: #555; line-height: 1.6; font-weight: 500; max-width: 750px; margin: 0 auto;">
+                The ultimate communication powerhouse for Odoo. Professional formatting, native document previews, pinned messages, and incredibly fast canned responses in one elegant suite.
+            </p>
+        </div>
+    </div>
+
+    <!-- MAIN FEATURES (6 CARDS GRID) -->
+    <div style="padding: 30px 20px 60px 20px;">
+        <div style="max-width: 1100px; margin: 0 auto; display: flex; flex-wrap: wrap; gap: 30px; justify-content: center;">
+            
+            <!-- CARD 1 -->
+            <div style="flex: 1 1 300px; max-width: 400px; background: #ffffff; border-radius: 20px; padding: 40px 30px; box-shadow: 0 10px 40px rgba(0,0,0,0.03); border: 1px solid rgba(0,0,0,0.05); transition: transform 0.2s;">
+                <div style="width: 50px; height: 50px; background: rgba(40,167,69,0.1); border-radius: 14px; display: flex; align-items: center; justify-content: center; margin-bottom: 20px;">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#28a745" stroke-width="2"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"></path><path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"></path></svg>
+                </div>
+                <h3 style="font-weight: 800; font-size: 1.25rem; margin-bottom: 12px; color: #111;">WYSIWYG Formatting</h3>
+                <p style="color: #666; line-height: 1.6; font-size: 0.95rem; margin: 0;">
+                    Complete rich text formatting toolbar. Send messages with proper structure (bold, italics, lists, and links) directly from the chatter feed without opening full windows.
+                </p>
+            </div>
+
+            <!-- CARD 2 -->
+            <div style="flex: 1 1 300px; max-width: 400px; background: #ffffff; border-radius: 20px; padding: 40px 30px; box-shadow: 0 10px 40px rgba(0,0,0,0.03); border: 1px solid rgba(0,0,0,0.05); transition: transform 0.2s;">
+                <div style="width: 50px; height: 50px; background: rgba(40,167,69,0.1); border-radius: 14px; display: flex; align-items: center; justify-content: center; margin-bottom: 20px;">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#28a745" stroke-width="2"><polyline points="4 17 10 11 4 5"></polyline><line x1="12" y1="19" x2="20" y2="19"></line></svg>
+                </div>
+                <h3 style="font-weight: 800; font-size: 1.25rem; margin-bottom: 12px; color: #111;">Native (/) Commands</h3>
+                <p style="color: #666; line-height: 1.6; font-size: 0.95rem; margin: 0;">
+                    Type "/" to trigger Odoo's native command menu directly in the chatter. Insert tables, media, and structural blocks seamlessly as if you were in the Website Editor.
+                </p>
+            </div>
+
+            <!-- CARD 3 -->
+            <div style="flex: 1 1 300px; max-width: 400px; background: #ffffff; border-radius: 20px; padding: 40px 30px; box-shadow: 0 10px 40px rgba(0,0,0,0.03); border: 1px solid rgba(0,0,0,0.05); transition: transform 0.2s;">
+                <div style="width: 50px; height: 50px; background: rgba(40,167,69,0.1); border-radius: 14px; display: flex; align-items: center; justify-content: center; margin-bottom: 20px;">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#28a745" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline></svg>
+                </div>
+                <h3 style="font-weight: 800; font-size: 1.25rem; margin-bottom: 12px; color: #111;">Interactive Previews</h3>
+                <p style="color: #666; line-height: 1.6; font-size: 0.95rem; margin: 0;">
+                    Don't litter your downloads folder. Click on any DOCX, XLSX, or PDF file attachment to view its contents natively immediately over the interface. 
+                </p>
+            </div>
+            
+            <!-- CARD 4 -->
+            <div style="flex: 1 1 300px; max-width: 400px; background: #ffffff; border-radius: 20px; padding: 40px 30px; box-shadow: 0 10px 40px rgba(0,0,0,0.03); border: 1px solid rgba(0,0,0,0.05); transition: transform 0.2s;">
+                <div style="width: 50px; height: 50px; background: rgba(40,167,69,0.1); border-radius: 14px; display: flex; align-items: center; justify-content: center; margin-bottom: 20px;">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#28a745" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="17" x2="12" y2="22"></line><path d="M5 17h14v-1.76a2 2 0 0 0-1.11-1.79l-1.78-.9A2 2 0 0 1 15 10.68V6a3 3 0 0 0-3-3 3 3 0 0 0-3 3v4.68a2 2 0 0 1-1.11 1.87l-1.78.89A2 2 0 0 0 5 15.24Z"></path></svg>
+                </div>
+                <h3 style="font-weight: 800; font-size: 1.25rem; margin-bottom: 12px; color: #111;">Pin Important Messages</h3>
+                <p style="color: #666; line-height: 1.6; font-size: 0.95rem; margin: 0;">
+                    Pin crucial agreements, instructions, or files strictly at the top of the chat thread. A simple visual icon indicates what is pinned for everyone.
+                </p>
+            </div>
+
+            <!-- CARD 5 -->
+            <div style="flex: 1 1 300px; max-width: 400px; background: #ffffff; border-radius: 20px; padding: 40px 30px; box-shadow: 0 10px 40px rgba(0,0,0,0.03); border: 1px solid rgba(0,0,0,0.05); transition: transform 0.2s;">
+                <div style="width: 50px; height: 50px; background: rgba(40,167,69,0.1); border-radius: 14px; display: flex; align-items: center; justify-content: center; margin-bottom: 20px;">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#28a745" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21c3 0 7-1 7-8V5c0-1.25-.756-2.017-2-2H4c-1.25 0-2 .75-2 1.972V11c0 1.25.75 2 2 2 1 0 1.5.5 1.5 1.5L5 21z"></path><path d="M15 21c3 0 7-1 7-8V5c0-1.25-.757-2.017-2-2h-4c-1.25 0-2 .75-2 1.972V11c0 1.25.75 2 2 2h.5c0 1-.5 1.5-.5 1.5L17 21z"></path></svg>
+                </div>
+                <h3 style="font-weight: 800; font-size: 1.25rem; margin-bottom: 12px; color: #111;">Instant Quote & Reply</h3>
+                <p style="color: #666; line-height: 1.6; font-size: 0.95rem; margin: 0;">
+                    Keep conversations structured in crowded threads. Click "Quote" on any past message to instantly append it as beautiful blockquote in your new reply.
+                </p>
+            </div>
+
+            <!-- CARD 6 -->
+            <div style="flex: 1 1 300px; max-width: 400px; background: #ffffff; border-radius: 20px; padding: 40px 30px; box-shadow: 0 10px 40px rgba(0,0,0,0.03); border: 1px solid rgba(0,0,0,0.05); transition: transform 0.2s;">
+                <div style="width: 50px; height: 50px; background: rgba(40,167,69,0.1); border-radius: 14px; display: flex; align-items: center; justify-content: center; margin-bottom: 20px;">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#28a745" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"></path></svg>
+                </div>
+                <h3 style="font-weight: 800; font-size: 1.25rem; margin-bottom: 12px; color: #111;">HTML Canned Responses</h3>
+                <p style="color: #666; line-height: 1.6; font-size: 0.95rem; margin: 0;">
+                    Accelerate your workflow with pre-configured Rich HTML shortcuts. Filter them precisely to ensure they appear only in Log Notes or Messages.
+                </p>
+            </div>
+            
+        </div>
+    </div>
+
+    <!-- MAIN SCREENSHOT (TABS) -->
+    <div style="padding: 20px 20px 60px 20px;">
+        <div style="max-width: 1000px; margin: 0 auto; text-align: center;">
+            <h2 style="font-weight: 900; font-size: 2.2rem; margin-bottom: 20px; color: #111;">See It In Action</h2>
+            <p style="color: #666; font-size: 1.1rem; margin-bottom: 40px;">Select an action below to explore the capabilities.</p>
+            
+            <div style="position: relative;">
+                <input type="radio" name="et-demo-tabs" id="et-tab1" class="et-tab-input" checked>
+                <input type="radio" name="et-demo-tabs" id="et-tab2" class="et-tab-input">
+                <input type="radio" name="et-demo-tabs" id="et-tab3" class="et-tab-input">
+                <input type="radio" name="et-demo-tabs" id="et-tab4" class="et-tab-input">
+                <input type="radio" name="et-demo-tabs" id="et-tab5" class="et-tab-input">
+                <input type="radio" name="et-demo-tabs" id="et-tab6" class="et-tab-input">
+
+                <div class="et-tab-nav" style="display: flex; gap: 15px; justify-content: center; flex-wrap: wrap; margin-bottom: 30px;">
+                    <label for="et-tab1" class="et-tab-label">1. Native Previews</label>
+                    <label for="et-tab2" class="et-tab-label">2. Slash ( / ) Commands</label>
+                    <label for="et-tab3" class="et-tab-label">3. Advanced Editor</label>
+                    <label for="et-tab4" class="et-tab-label">4. Pinned Messages</label>
+                    <label for="et-tab5" class="et-tab-label">5. Instant Quotes</label>
+                    <label for="et-tab6" class="et-tab-label">6. Canned Responses</label>
+                </div>
+
+                <div class="et-content-wrapper" style="background: #ffffff; border-radius: 16px; padding: 10px; box-shadow: 0 20px 50px rgba(0,0,0,0.08); border: 1px solid rgba(0,0,0,0.05); min-height: 400px; display: flex; align-items: center; justify-content: center; overflow: hidden;">
+                    
+                    <div id="et-content1" class="et-tab-content">
+                        <!-- Add your GIF here: 'demo_previews.gif' -->
+                        <img src="demo_previews.gif" style="width: 100%; border-radius: 8px; display: block; margin: 0 auto; background: #eee;" alt="Preview Demo">
+                    </div>
+                    
+                    <div id="et-content2" class="et-tab-content">
+                        <img src="demo_slash.gif" style="width: 100%; border-radius: 8px; display: block; margin: 0 auto; background: #eee;" alt="Slash Commands Demo">
+                    </div>
+
+                    <div id="et-content3" class="et-tab-content">
+                        <img src="demo_editor.gif" style="width: 100%; border-radius: 8px; display: block; margin: 0 auto; background: #eee;" alt="Editor Demo">
+                    </div>
+                    
+                    <div id="et-content4" class="et-tab-content">
+                        <img src="demo_pinned.gif" style="width: 100%; border-radius: 8px; display: block; margin: 0 auto; background: #eee;" alt="Pinned Messages Demo">
+                    </div>
+
+                    <div id="et-content5" class="et-tab-content">
+                        <img src="demo_quotes.gif" style="width: 100%; border-radius: 8px; display: block; margin: 0 auto; background: #eee;" alt="Quotes Demo">
+                    </div>
+
+                    <div id="et-content6" class="et-tab-content">
+                        <img src="demo_canned.gif" style="width: 100%; border-radius: 8px; display: block; margin: 0 auto; background: #eee;" alt="Canned Responses Demo">
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- SUPPORT POLICIES -->
+    <div style="padding: 40px 20px;">
+        <div style="max-width: 800px; margin: 0 auto; background: #ffffff; border-radius: 20px; padding: 40px; text-align: center; box-shadow: 0 5px 25px rgba(0,0,0,0.02); border: 1px solid rgba(0,0,0,0.05);">
+            <div style="width: 60px; height: 60px; background: rgba(0,0,0,0.02); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 20px auto;">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#111" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
+            </div>
+            <h2 style="font-weight: 800; font-size: 1.7rem; margin-bottom: 12px; color: #111;">Support & Compatibility</h2>
+            <p style="color: #444; font-size: 1.05rem; line-height: 1.6; margin-bottom: 25px;">
+                Rich Text Chatter is entirely compatible with out-of-the-box Odoo 18.0 versions (Enterprise & Community).
+            </p>
+            <div style="background-color: #fafafa; padding: 20px; border-radius: 10px; text-align: left; border: 1px solid #f0f0f0;">
+                <p style="margin: 0; color: #666; font-size: 0.9rem; font-style: italic; line-height: 1.6;">
+                    * 3rd Party Disclaimer: While we strive for maximum usability, we cannot explicitly guarantee seamless integration with heavily modified Odoo instances or situations involving conflicting third-party modules that overwrite core chatter behaviors.
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <!-- FAQ -->
+    <div style="padding: 40px 20px 80px 20px;">
+        <div style="max-width: 800px; margin: 0 auto;">
+            <h2 style="font-weight: 900; font-size: 2.2rem; text-align: center; margin-bottom: 15px; color: #111;">Frequently Asked Questions</h2>
+            <p style="text-align: center; color: #666; margin-bottom: 40px; font-size: 1.05rem;">Everything you need to know.</p>
+
+            <div style="margin-bottom: 20px; background: #fff; padding: 25px 30px; border-radius: 16px; box-shadow: 0 4px 12px rgba(0,0,0,0.01); border: 1px solid #f0f0f0;">
+                <h4 style="font-weight: 700; font-size: 1.1rem; color: #111; margin: 0 0 10px 0;">Is it compatible with Odoo Enterprise?</h4>
+                <p style="margin: 0; color: #555; font-size: 0.95rem; line-height: 1.6;">Yes! The module enhances the native chatter equally in both Enterprise and Community editions.</p>
+            </div>
+            <div style="margin-bottom: 20px; background: #fff; padding: 25px 30px; border-radius: 16px; box-shadow: 0 4px 12px rgba(0,0,0,0.01); border: 1px solid #f0f0f0;">
+                <h4 style="font-weight: 700; font-size: 1.1rem; color: #111; margin: 0 0 10px 0;">How are Canned Responses categorized?</h4>
+                <p style="margin: 0; color: #555; font-size: 0.95rem; line-height: 1.6;">Odoo handles them globally by default, but our module lets you restrict them to only show for 'Log Notes' or 'Send Messages' to keep your menus clean.</p>
+            </div>
+            <div style="margin-bottom: 20px; background: #fff; padding: 25px 30px; border-radius: 16px; box-shadow: 0 4px 12px rgba(0,0,0,0.01); border: 1px solid #f0f0f0;">
+                <h4 style="font-weight: 700; font-size: 1.1rem; color: #111; margin: 0 0 10px 0;">Does it support the Mobile App?</h4>
+                <p style="margin: 0; color: #555; font-size: 0.95rem; line-height: 1.6;">Yes. While advanced rich-text composition is primarily optimized for browser setups, the Mobile App respects all generated HTML formatting faithfully on read.</p>
+            </div>
+            <div style="margin-bottom: 20px; background: #fff; padding: 25px 30px; border-radius: 16px; box-shadow: 0 4px 12px rgba(0,0,0,0.01); border: 1px solid #f0f0f0;">
+                <h4 style="font-weight: 700; font-size: 1.1rem; color: #111; margin: 0 0 10px 0;">Will it alter my existing messages or database?</h4>
+                <p style="margin: 0; color: #555; font-size: 0.95rem; line-height: 1.6;">Absolutely not. Your historical data is 100% safe. The module strictly upgrades the visual rendering engine and the composition interface going forward.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- FUNNEL / CTA CARD -->
+    <div style="padding: 0 20px 80px 20px;">
+        <div style="max-width: 900px; margin: 0 auto; background: linear-gradient(135deg, #111111 0%, #1a281e 100%); color: #ffffff; padding: 60px 40px; text-align: center; border-radius: 30px; box-shadow: 0 20px 50px rgba(0,0,0,0.15); position: relative; overflow: hidden;">
+            
+            <!-- Abstract Background Glows -->
+            <div style="position: absolute; top: -50px; right: -50px; width: 200px; height: 200px; background: rgba(40, 167, 69, 0.2); border-radius: 50%; filter: blur(50px);"></div>
+            <div style="position: absolute; bottom: -50px; left: -50px; width: 150px; height: 150px; background: rgba(40, 167, 69, 0.15); border-radius: 50%; filter: blur(40px);"></div>
+
+            <div style="position: relative; z-index: 1;">
+                <h2 style="font-weight: 900; font-size: 2.2rem; margin-bottom: 15px; color: #fff;">Reliable tools for your team</h2>
+                <p style="color: #aaa; font-size: 1.1rem; margin-bottom: 40px;">Need technical help or have custom requirements?</p>
+                
+                <div style="display: flex; gap: 20px; justify-content: center; flex-wrap: wrap;">
+                    <a href="mailto:support@eightools.com" style="background-color: #28a745; color: #ffffff; text-decoration: none; padding: 16px 32px; border-radius: 12px; font-weight: 700; display: inline-flex; align-items: center; gap: 10px; transition: opacity 0.2s; box-shadow: 0 10px 20px rgba(40, 167, 69, 0.2);">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+                        support@eightools.com
+                    </a>
+                    <a href="https://www.eightools.com" style="background-color: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.2); color: #ffffff; text-decoration: none; padding: 16px 32px; border-radius: 12px; font-weight: 700; display: inline-block;">
+                        Visit Website
+                    </a>
+                </div>
+                
+            </div>
+        </div>
+    </div>
+
+</section>

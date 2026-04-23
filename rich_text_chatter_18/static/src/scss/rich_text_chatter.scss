@@ -1,0 +1,179 @@
+.rich-text-chatter-container {
+    /* Dar espacio al textarea rico para que el texto no se vea "pegado" a los bordes */
+    .o-mail-Composer-input.odoo-editor-editable,
+    .odoo-editor-editable {
+        padding: 12px 14px !important;
+        padding-right: 50px !important;
+        border-radius: 8px;
+        min-height: 40px;
+        background-color: white;
+
+        /* Placeholder styling */
+        &.o-is-empty:before {
+            content: attr(placeholder);
+            color: #adb5bd;
+            position: absolute;
+            pointer-events: none;
+        }
+    }
+
+    .oe-toolbar, .o_we_toolbar {
+        margin-right: 8px;
+        margin-top: 2px;
+        z-index: 10 !important;
+        box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        border-radius: 4px;
+    }
+}
+
+/* Permitir que las imágenes dentro de los mensajes tengan cursor de puntero para indicar el full preview */
+.o-mail-Message-body img, 
+.o-mail-Message-richBody img {
+    cursor: pointer;
+    transition: opacity 0.2s ease-in-out;
+    &:hover {
+        opacity: 0.9;
+    }
+}
+
+/* Fix para mensajes "comprimidos" en el Chatter publicado */
+.o-mail-Message-core,
+.o-mail-Message-content, 
+.o-mail-Message-bubble,
+.o-mail-Message-body {
+    /* Forzar que el contenedor principal ocupe todo el ancho */
+    flex-grow: 1 !important;
+    width: 100% !important;
+    max-width: 100% !important;
+}
+
+.o-mail-Message-content {
+    /* Forzar al chatter a mostrar todo el bloque sin importar cuan largo es (cancela el 'read more') */
+    max-height: none !important;
+}
+
+.o-mail-Message-readMore {
+    /* Esconder cualquier boton residual de 'Read More' inyectado por Odoo si existiera */
+    display: none !important;
+}
+
+.o-mail-Message-body {
+    /* Asegurar que el div envolvente 'w-100' inyectado en JS funcione */
+    & > .w-100 {
+        width: 100% !important;
+        display: block !important;
+    }
+
+    /* Asegurar que las tablas de Odoo ocupen el ancho total si el editor así lo configuró */
+    table {
+        width: 100%;
+        margin-bottom: 1rem;
+    }
+
+    /* Asegurar que los bloques de alerta (lightbulbs, etc) no se compriman */
+    .alert {
+        width: 100%;
+        display: block;
+    }
+}
+
+/* --- PINNED MESSAGES STYLING --- */
+.o-mail-Thread-pinned-container {
+    background: rgba(113, 75, 103, 0.03); /* Subtle primary tint */
+    border-radius: 12px;
+    margin: 10px 15px;
+    overflow: hidden;
+    border: 1px solid rgba(0,0,0,0.05);
+
+    .o-mail-Thread-pinned-list {
+        max-height: 400px;
+        overflow-y: auto;
+        
+        &::-webkit-scrollbar {
+            width: 4px;
+        }
+        &::-webkit-scrollbar-thumb {
+            background: rgba(113, 75, 103, 0.2);
+            border-radius: 10px;
+        }
+    }
+}
+
+.o-mail-Message-pinned {
+    background-color: white !important;
+    margin-bottom: 4px !important;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.07) !important;
+    transition: box-shadow 0.2s ease;
+    overflow: hidden; /* keep button within rounded corners */
+
+    &:hover {
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1) !important;
+    }
+}
+
+.o-mail-Thread-pinned-item {
+    position: relative; /* positioning context for the button */
+
+    .o-mail-Thread-pinned-jump {
+        position: absolute;
+        top: 50%;
+        right: 15px;
+        transform: translateY(-50%);
+        z-index: 20;
+        display: none;
+        align-items: center;
+        justify-content: center;
+        width: 32px;
+        height: 32px;
+        border: none;
+        border-radius: 50%;
+        background: rgba(113, 75, 103, 0.1);
+        color: #714B67;
+        cursor: pointer;
+        transition: all 0.2s ease;
+
+        &:hover {
+            background: #714B67;
+            color: white;
+            box-shadow: 0 2px 6px rgba(113, 75, 103, 0.3);
+        }
+    }
+
+    &:hover .o-mail-Thread-pinned-jump {
+        display: flex;
+    }
+}
+
+.animate-pin {
+    display: inline-block;
+    animation: rt-pin-intro 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+}
+
+@keyframes rt-pin-intro {
+    0% { transform: scale(0.5) rotate(-45deg); opacity: 0; }
+    100% { transform: scale(1) rotate(0deg); opacity: 1; }
+}
+
+/* --- MODERN GRAY HIGHLIGHT (NO-SHIFT) --- */
+.o-mail-Message {
+    position: relative;
+    border-radius: 8px;
+    /* Base transparent border to prevent layout shift when highlighted */
+    border-left: 4px solid transparent;
+    transition: background-color 0.6s ease, border-color 0.6s ease, transform 0s !important;
+}
+
+.o-mail-Message.o-highlighted {
+    transform: none !important; /* Block native Odoo 18 bounce */
+    background-color: #f1f3f5 !important; /* Soft Gray */
+    border-left: 4px solid #adb5bd !important; /* Gray accent bar */
+    padding-left: 15px !important; /* Keep text from sticking to the border */
+    border-radius: 0 8px 8px 0;
+    animation: rt-gray-fade 4s ease-in-out forwards;
+}
+
+@keyframes rt-gray-fade {
+    0% { background-color: #f1f3f5; border-left-color: #adb5bd; }
+    80% { background-color: #f1f3f5; border-left-color: #adb5bd; }
+    100% { background-color: transparent; border-left-color: transparent; }
+}
